@@ -40,11 +40,15 @@ public class Program {
 			sellerDao.insert(newSeller);
 			//Print para ver se o programa deu certo e retorna o id de volta
 			System.out.println("Inserted! New id = " + newSeller.getId());
-					
 	
-	
-	
-		
+			System.out.println("\n=== TEST 5: seller update ====");
+			//Reaproveitando a variavel seller usada anteriormente a cima no codigo
+			seller = sellerDao.findById(1);
+			//Apartir do set alteraremos o nome do vendedor 1
+			seller.setName("Marta Carvalho");
+			//Agora salvamos o vendedor atualizando os dados dele
+			sellerDao.update(seller);
+			System.out.println("Update completed");
 	}
 
 }
